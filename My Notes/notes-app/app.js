@@ -31,9 +31,17 @@ args.command({
 
     command: 'remove',
     describe: ' removes a new note',
-    handler : function(){
+    builder:{
+        title:{
+            describe:"Note title",
+            demandOption:false,
+            type: 'string'
 
-        console.log('remove the  note!')
+        }
+    },
+    handler : function(argv){
+
+        notes.removeNotes(argv.title)
     }
 
 })
