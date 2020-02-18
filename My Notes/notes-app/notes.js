@@ -39,8 +39,11 @@ const removeNotes = function(title){
     // }
 
     fs.writeFileSync('./notes.json', JSON.stringify(newNotes))
-   
-
+    //console.log(notes, newNotes)
+    if (JSON.stringify(notes) !== JSON.stringify(newNotes))
+        return true
+    else
+        return false
 }
 
 //removeNotes("The solomon wisdom")

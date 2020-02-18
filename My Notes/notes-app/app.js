@@ -41,7 +41,11 @@ args.command({
     },
     handler : function(argv){
 
-        notes.removeNotes(argv.title)
+       // val = notes.removeNotes(argv.title)
+        if(notes.removeNotes(argv.title))
+            console.log(chalk.green.inverse('Notes Removed'))
+        else
+            console.log(chalk.red.inverse('No Notes Removed'))
     }
 
 })
